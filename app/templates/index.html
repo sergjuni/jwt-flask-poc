@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JWT FLASK</title>
+    <style>
+        body { font-family: sans-serif; margin: 20px; }
+        .container { max-width: 500px; margin-bottom: 20px; padding: 15px; border: 1px solid #ccc; border-radius: 5px; }
+        label, input, button { display: block; margin-bottom: 10px; }
+        input { width: calc(100% - 10px); padding: 5px; }
+        button { padding: 8px 15px; }
+        #messageArea { margin-top: 15px; padding: 10px; border: 1px solid transparent; border-radius: 3px; }
+        .success { border-color: green; background-color: #e6ffe6; color: green; }
+        .error { border-color: red; background-color: #ffe6e6; color: red; }
+    </style>
+</head>
+<body>
+    <h1>PoC Flask com Autenticação JWT</h1>
+
+    <div class="container">
+        <h2>Registrar</h2>
+        <form id="registerForm">
+            <label for="regUsername">Usuário:</label>
+            <input type="text" id="regUsername" required>
+            <label for="regPassword">Senha:</label>
+            <input type="password" id="regPassword" required>
+            <button type="submit">Registrar</button>
+        </form>
+    </div>
+
+    <div class="container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <label for="loginUsername">Usuário:</label>
+            <input type="text" id="loginUsername" required>
+            <label for="loginPassword">Senha:</label>
+            <input type="password" id="loginPassword" required>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <div class="container">
+        <h2>Status / Ações</h2>
+        <button id="logoutButton" style="display:none;">Logout</button>
+        <div id="messageArea"></div>
+        <button id="fetchProtectedDataButton" style="display:none;">Buscar Dados Protegidos</button>
+        <div id="protectedDataArea" style="margin-top:10px;"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
